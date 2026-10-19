@@ -81,19 +81,10 @@ h1 em, h2 em { color: var(--terracotta); font-style: normal; }
 .tech-list { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 9px 33px; padding-top: 15px; }
 .tech-list span { color: var(--muted); font-size: 11px; }
 .project-grid { display: grid; gap: clamp(28px, 4vw, 64px); grid-template-columns: 1fr 1fr; margin-top: 125px; }
-.secondary-visual { aspect-ratio: 1.28; background: #ddd8ce; overflow: hidden; padding: 27px 30px; position: relative; transition: transform .45s ease; }
+.secondary-visual { aspect-ratio: 1.28; background: #ddd8ce; overflow: hidden; position: relative; transition: transform .45s ease; }
 .secondary-project:hover .secondary-visual { transform: scale(.985); }
-.echo-visual { background: #20211f; color: var(--paper); }
-.guard-visual { background: #d9ddd5; }
-.secondary-visual .visual-topline { color: inherit; opacity: .55; }
-.secondary-content { bottom: 34px; left: 30px; position: absolute; right: 30px; }
-.visual-kicker { color: var(--terracotta); display: block; font-size: 10px; letter-spacing: .14em; margin-bottom: 15px; }
-.secondary-content strong { display: block; font-family: var(--font-manrope); font-size: clamp(27px, 3vw, 45px); font-weight: 500; letter-spacing: -.07em; line-height: 1.02; white-space: pre-line; }
-.signal-row { align-items: center; border-top: 1px solid currentColor; display: flex; gap: 18px; margin-top: 45px; opacity: .65; padding-top: 10px; }
-.signal-label { font-size: 9px; letter-spacing: .1em; }
-.signal-line { align-items: end; display: flex; gap: 3px; height: 16px; }
-.signal-line i { background: var(--terracotta); display: block; height: 8px; width: 3px; }
-.signal-line i:nth-child(2) { height: 13px; }.signal-line i:nth-child(3) { height: 10px; }.signal-line i:nth-child(4) { height: 16px; }.signal-line i:nth-child(5) { height: 7px; }
+.project-image { object-fit: cover; }
+
 .secondary-heading { margin-top: 25px; }.secondary-heading h3 { font-size: clamp(31px, 3.4vw, 49px); }.secondary-project > p { margin-top: 22px; max-width: 420px; }.preview-link { display: block; margin-top: 27px; }.preview-link span { color: var(--terracotta); font-size: 15px; margin-left: 4px; }.illustration-note { margin-top: 70px; text-align: right; }
 
 .services-section, .philosophy-section, .about-section { padding-bottom: 145px; }

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const services = [
   {
     number: "01",
@@ -68,19 +70,17 @@ function TamitorVisual() {
   );
 }
 
-function EchoVisual({ variant }: { variant: "echo" | "guard" }) {
+function ProjectVisual({ variant }: { variant: "echo" | "guard" }) {
   const guard = variant === "guard";
   return (
-    <div className={`secondary-visual ${guard ? "guard-visual" : "echo-visual"}`}>
-      <div className="visual-topline"><span>{guard ? "RUNTIME HEALTH" : "KNOWLEDGE INTERFACE"}</span><span>{guard ? "LIVE MONITOR" : "ECHO / 02"}</span></div>
-      <div className="secondary-content">
-        <span className="visual-kicker">{guard ? "ECHO GUARD" : "ECHO"}</span>
-        <strong>{guard ? "Know when the system\nneeds attention." : "Make complex\nknowledge useful."}</strong>
-        <div className="signal-row">
-          <span className="signal-label">{guard ? "WORKFLOW SIGNAL" : "RETRIEVAL SIGNAL"}</span>
-          <span className="signal-line"><i /><i /><i /><i /><i /></span>
-        </div>
-      </div>
+    <div className="secondary-visual">
+      <Image
+        src={guard ? "/og-guard-v3.png" : "/og-echo.png"}
+        alt={guard ? "Echo Guard product artwork" : "Echo product artwork"}
+        fill
+        sizes="(max-width: 720px) 100vw, 50vw"
+        className="project-image"
+      />
     </div>
   );
 }
@@ -116,10 +116,10 @@ export default function Home() {
           <div className="tech-list"><span>Python</span><span>Temporal</span><span>OpenAI</span><span>Google Calendar</span><span>WhatsApp</span></div>
         </article>
         <div className="project-grid">
-          <article className="secondary-project"><EchoVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">02 / 03</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
-          <article className="secondary-project"><EchoVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">03 / 03</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">02 / 03</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">03 / 03</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
         </div>
-        <p className="illustration-note">Illustrative interfaces shown while project captures are being prepared.</p>
+        <p className="illustration-note">Project artwork shown while the Echo and Echo Guard case studies are being prepared.</p>
       </section>
 
       <section className="services-section shell section-rule">
