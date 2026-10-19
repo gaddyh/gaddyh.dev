@@ -83,7 +83,7 @@ h1 em, h2 em { color: var(--terracotta); font-style: normal; }
 .project-grid { display: grid; gap: clamp(28px, 4vw, 64px); grid-template-columns: 1fr 1fr; margin-top: 125px; }
 .secondary-visual { aspect-ratio: 1.28; background: #ddd8ce; overflow: hidden; position: relative; transition: transform .45s ease; }
 .secondary-project:hover .secondary-visual { transform: scale(.985); }
-.project-image { object-fit: cover; }
+.project-image { object-fit: contain; }
 
 .secondary-heading { margin-top: 25px; }.secondary-heading h3 { font-size: clamp(31px, 3.4vw, 49px); }.secondary-project > p { margin-top: 22px; max-width: 420px; }.preview-link { display: block; margin-top: 27px; }.preview-link span { color: var(--terracotta); font-size: 15px; margin-left: 4px; }.illustration-note { margin-top: 70px; text-align: right; }
 
