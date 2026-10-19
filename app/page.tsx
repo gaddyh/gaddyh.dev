@@ -4,17 +4,17 @@ const services = [
   {
     number: "01",
     title: "AI Agents &\nIntelligent Automation",
-    copy: "AI systems that interpret requests, use tools, interact with business data, and execute multi-step workflows.",
+    copy: "AI systems that interpret requests, use tools, interact with business data, and execute multi-step workflows. Examples: booking assistants, CRM automation, and messaging workflows.",
   },
   {
     number: "02",
     title: "Complete AI\nProducts",
-    copy: "From early prototype to production deployment. Backend architecture, application logic, AI integration, APIs, and user-facing experiences.",
+    copy: "From early prototype to production deployment. Backend architecture, application logic, AI integration, APIs, and user-facing experiences. Examples: AI SaaS prototypes and intelligent assistants.",
   },
   {
     number: "03",
     title: "Reliable Backend\n& Integrations",
-    copy: "Event-driven systems, durable workflows, third-party APIs, observability, and failure recovery.",
+    copy: "Event-driven systems, durable workflows, third-party APIs, observability, and failure recovery. Examples: agent debugging and workflow hardening.",
   },
 ];
 
@@ -98,11 +98,26 @@ export default function Home() {
           <div className="tech-list"><span>Python</span><span>Temporal</span><span>OpenAI</span><span>Google Calendar</span><span>WhatsApp</span></div>
         </article>
         <div className="project-grid">
-          <article className="secondary-project"><ProjectVisual variant="barcode" /><div className="secondary-heading"><div><span className="project-number">02 / 04</span><h3>Barcode Scanner</h3></div><span className="project-type">ERP AUTOMATION</span></div><p>A scanning system that detects barcodes from box photos and turns them into structured business data.</p><span className="preview-link">Showcase available <span>↗</span></span></article>
-          <article className="secondary-project"><ProjectVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">03 / 04</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
-          <article className="secondary-project"><ProjectVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">04 / 04</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="barcode" /><div className="secondary-heading"><div><span className="project-number">02 / 04</span><h3>Barcode Scanner</h3></div><span className="project-type">ERP AUTOMATION</span></div><p>A scanning system that detects barcodes from box photos and turns them into structured business data.</p><a className="preview-link" href="https://github.com/gaddyh/barcode-scanner" target="_blank" rel="noopener noreferrer">View project code <span>↗</span></a></article>
+          <article className="secondary-project"><ProjectVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">03 / 04</span><h3>Echo</h3></div><span className="project-type">CONVERSATION INTELLIGENCE</span></div><p>An AI messaging assistant that identifies conversations needing a response, analyzes context, and turns overlooked messages into actionable follow-ups.</p><a className="preview-link" href="https://github.com/gaddyh/echo-v2" target="_blank" rel="noopener noreferrer">Explore the repository <span>↗</span></a></article>
+          <article className="secondary-project"><ProjectVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">04 / 04</span><h3>Echo Guard</h3></div><span className="project-type">AI SAFETY</span></div><p>An AI safety pilot that detects potential risks in children's messaging and sends privacy-conscious alerts to parents.</p><a className="preview-link" href="/guard">Visit Echo Guard <span>↗</span></a></article>
         </div>
-        <p className="illustration-note">Project artwork shown while detailed case studies are being prepared.</p>
+        <p className="illustration-note">Product showcase imagery is illustrative; explore the linked work for implementation details.</p>
+      </section>
+
+      <section className="proof-section shell section-rule" aria-labelledby="engineering-title">
+        <div className="proof-panel">
+          <p className="proof-eyebrow">BEYOND THE DEMO</p>
+          <h2 id="engineering-title">The hard part isn't making AI work once. <em>It's making it reliable.</em></h2>
+          <p className="proof-intro">I combine AI decision-making with dependable backend engineering: recoverable workflows, persistent state, real integrations, and decisions you can inspect.</p>
+          <div className="proof-grid">
+            <div><span>01 /</span><h3>Durable execution</h3><p>Temporal workflows, retries, timeouts, and recovery.</p></div>
+            <div><span>02 /</span><h3>Controlled AI</h3><p>Structured outputs, validation, and model evaluation.</p></div>
+            <div><span>03 /</span><h3>Persistent systems</h3><p>PostgreSQL, Redis, event ingestion, and deduplication.</p></div>
+            <div><span>04 /</span><h3>Traceable decisions</h3><p>Decision evidence, operational telemetry, and delivery outcomes.</p></div>
+          </div>
+          <a className="proof-link" href="https://github.com/gaddyh" target="_blank" rel="noopener noreferrer">Explore my engineering on GitHub <Arrow /></a>
+        </div>
       </section>
 
       <section className="services-section shell section-rule">
@@ -117,7 +132,7 @@ export default function Home() {
 
       <section id="about" className="about-section shell section-rule">
         <SectionIntro index="04" eyebrow="ABOUT ME" title="Engineering with perspective." />
-        <div className="about-content"><p className="about-lede">I&apos;m Gaddy, a software engineer with over 25 years of experience building software.</p><div className="about-copy"><p>Today I focus on AI-powered applications, intelligent automation, and the engineering required to make these systems reliable in the real world.</p><p>I work across the stack — from architecture and backend infrastructure to AI systems, integrations, and complete products.</p><p>I enjoy the entire process: understanding a problem, finding a practical solution, building it, and getting it into users&apos; hands.</p></div></div>
+        <div className="about-content"><p className="about-lede">I&apos;m Gaddy, a software engineer with over 25 years of experience building software.</p><div className="about-copy"><p>Today I focus on AI-powered applications, intelligent automation, and the engineering required to make these systems reliable in the real world.</p><p>I work across the stack — from architecture and backend infrastructure to AI systems, integrations, and complete products.</p><p>I enjoy the entire process: understanding a problem, finding a practical solution, building it, and getting it into users&apos; hands.</p><p><a className="text-link" href="https://github.com/gaddyh" target="_blank" rel="noopener noreferrer">View my GitHub <Arrow /></a></p></div></div>
       </section>
 
       <section id="contact" className="contact-section shell"><div className="contact-label">05 <span>LET&apos;S BUILD SOMETHING</span></div><h2>Let&apos;s build something<br /><em>that works.</em></h2><p>Whether you&apos;re exploring an AI product, automating a process, or strengthening an existing system, I&apos;d love to hear what you&apos;re working on.</p><a className="contact-link" href="mailto:hello@gaddyh.dev">Get in touch <Arrow diagonal /></a></section>

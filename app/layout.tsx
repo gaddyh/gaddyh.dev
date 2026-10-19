@@ -8,15 +8,15 @@ const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://gaddyh.dev"),
   title: {
-    default: "Gaddy H. — Independent AI Engineer & Product Builder",
-    template: "%s — Gaddy H.",
+    default: "Gaddy Heineken — Independent AI Engineer & Product Builder",
+    template: "%s — Gaddy Heineken",
   },
   description: "I design, build, and ship AI-powered software that works in the real world.",
   openGraph: {
-    title: "Gaddy H. — Independent AI Engineer & Product Builder",
+    title: "Gaddy Heineken — Independent AI Engineer & Product Builder",
     description: "Complete AI products, reliable backends, and intelligent automation.",
     url: "https://gaddyh.dev",
-    siteName: "Gaddy H.",
+    siteName: "Gaddy Heineken",
     type: "website",
   },
 };
