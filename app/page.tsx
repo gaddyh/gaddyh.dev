@@ -1,69 +1,144 @@
-import Image from "next/image";
+const services = [
+  {
+    number: "01",
+    title: "AI Agents &\nIntelligent Automation",
+    copy: "AI systems that interpret requests, use tools, interact with business data, and execute multi-step workflows.",
+  },
+  {
+    number: "02",
+    title: "Complete AI\nProducts",
+    copy: "From early prototype to production deployment. Backend architecture, application logic, AI integration, APIs, and user-facing experiences.",
+  },
+  {
+    number: "03",
+    title: "Reliable Backend\n& Integrations",
+    copy: "Event-driven systems, durable workflows, third-party APIs, observability, and failure recovery.",
+  },
+];
+
+function Arrow({ diagonal = false }: { diagonal?: boolean }) {
+  return <span aria-hidden="true" className={diagonal ? "arrow arrow-diagonal" : "arrow"}>↗</span>;
+}
+
+function SectionIntro({ index, eyebrow, title }: { index: string; eyebrow: string; title: string }) {
+  return (
+    <div className="section-intro">
+      <span className="section-index">{index}</span>
+      <div>
+        <p className="eyebrow">{eyebrow}</p>
+        <h2>{title}</h2>
+      </div>
+    </div>
+  );
+}
+
+function TamitorVisual() {
+  return (
+    <div className="tamitor-visual" aria-label="Illustrative TamiTor scheduling workflow">
+      <div className="visual-topline">
+        <span>CONVERSATION → EXECUTION</span>
+        <span className="status-dot">● SYSTEM READY</span>
+      </div>
+      <div className="conversation-window">
+        <div className="message message-customer">
+          <span className="message-label">CUSTOMER · WHATSAPP</span>
+          <p>Hi! Can I book a haircut tomorrow afternoon?</p>
+        </div>
+        <div className="message message-assistant">
+          <span className="message-label">TAMITOR</span>
+          <p>Of course. I found a slot at 3:30 PM. Would you like me to book it?</p>
+        </div>
+        <div className="message message-customer message-short">
+          <p>Yes, please!</p>
+        </div>
+      </div>
+      <div className="workflow-card">
+        <div className="workflow-heading">
+          <span>WORKFLOW EXECUTION</span>
+          <span>01—04</span>
+        </div>
+        <div className="workflow-steps">
+          <div><span className="step-check">✓</span><span>Intent recognized<small>book_appointment</small></span></div>
+          <div><span className="step-check">✓</span><span>Availability checked<small>Google Calendar</small></span></div>
+          <div><span className="step-check">✓</span><span>Booking created<small>Idempotent operation</small></span></div>
+          <div><span className="step-check">✓</span><span>Confirmation sent<small>WhatsApp</small></span></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EchoVisual({ variant }: { variant: "echo" | "guard" }) {
+  const guard = variant === "guard";
+  return (
+    <div className={`secondary-visual ${guard ? "guard-visual" : "echo-visual"}`}>
+      <div className="visual-topline"><span>{guard ? "RUNTIME HEALTH" : "KNOWLEDGE INTERFACE"}</span><span>{guard ? "LIVE MONITOR" : "ECHO / 02"}</span></div>
+      <div className="secondary-content">
+        <span className="visual-kicker">{guard ? "ECHO GUARD" : "ECHO"}</span>
+        <strong>{guard ? "Know when the system\nneeds attention." : "Make complex\nknowledge useful."}</strong>
+        <div className="signal-row">
+          <span className="signal-label">{guard ? "WORKFLOW SIGNAL" : "RETRIEVAL SIGNAL"}</span>
+          <span className="signal-line"><i /><i /><i /><i /><i /></span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <header className="site-header shell">
+        <a href="#top" className="wordmark" aria-label="Gaddy H homepage">gaddyh<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a className="nav-contact" href="mailto:hello@gaddyh.dev">Contact <Arrow /></a>
+        </nav>
+      </header>
+
+      <section id="top" className="hero shell">
+        <div className="hero-kicker"><span className="kicker-line" /> INDEPENDENT AI ENGINEER · PRODUCT BUILDER</div>
+        <h1>I turn complex ideas<br /><em>into products that work.</em></h1>
+        <div className="hero-bottom">
+          <p className="hero-copy">I design, build, and ship AI-powered software — from intelligent agents and automation to reliable backends and complete applications.</p>
+          <div className="hero-actions"><a className="text-link link-primary" href="#work">Explore my work <Arrow /></a><a className="text-link" href="mailto:hello@gaddyh.dev">Let&apos;s talk <Arrow /></a></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-meta"><span>25+ years building software</span><span>Based in Israel · Working worldwide</span></div>
+      </section>
+
+      <section id="work" className="work-section shell section-rule">
+        <SectionIntro index="01" eyebrow="SELECTED WORK" title="Products built for the real world." />
+        <article className="featured-project">
+          <div className="project-heading"><div><span className="project-number">01 / 03</span><h3>TamiTor</h3></div><span className="project-type">AI SCHEDULING</span></div>
+          <TamitorVisual />
+          <div className="project-story"><div><span className="story-label">01 — FEATURED PROJECT</span><h4>An AI assistant that handles appointments from conversation to calendar.</h4></div><div><p>A conversational scheduling system that understands customer requests, checks availability, manages booking workflows, and integrates with real business calendars.</p><a className="text-link" href="/work/tamitor">Explore the case study <Arrow /></a></div></div>
+          <div className="tech-list"><span>Python</span><span>Temporal</span><span>OpenAI</span><span>Google Calendar</span><span>WhatsApp</span></div>
+        </article>
+        <div className="project-grid">
+          <article className="secondary-project"><EchoVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">02 / 03</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><EchoVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">03 / 03</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
         </div>
-      </main>
-    </div>
+        <p className="illustration-note">Illustrative interfaces shown while project captures are being prepared.</p>
+      </section>
+
+      <section className="services-section shell section-rule">
+        <SectionIntro index="02" eyebrow="WHAT I BUILD" title="Useful systems, end to end." />
+        <div className="services-grid">{services.map((service) => <article className="service" key={service.number}><span className="service-number">{service.number}</span><h3>{service.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h3><p>{service.copy}</p></article>)}</div>
+      </section>
+
+      <section className="philosophy-section shell section-rule">
+        <SectionIntro index="03" eyebrow="ENGINEERING PHILOSOPHY" title="Intelligent decisions. Deterministic execution." />
+        <div className="philosophy-content"><p className="philosophy-lede">I believe AI should make software more capable, not less predictable.</p><div className="philosophy-copy"><p>My systems use language models for understanding and decision-making, while application code controls execution, validation, state, and recovery.</p><p>Because a convincing demo is easy. Building something people can actually depend on is the real engineering challenge.</p></div></div>
+      </section>
+
+      <section id="about" className="about-section shell section-rule">
+        <SectionIntro index="04" eyebrow="ABOUT ME" title="Engineering with perspective." />
+        <div className="about-content"><p className="about-lede">I&apos;m Gaddy, a software engineer with over 25 years of experience building software.</p><div className="about-copy"><p>Today I focus on AI-powered applications, intelligent automation, and the engineering required to make these systems reliable in the real world.</p><p>I work across the stack — from architecture and backend infrastructure to AI systems, integrations, and complete products.</p><p>I enjoy the entire process: understanding a problem, finding a practical solution, building it, and getting it into users&apos; hands.</p></div></div>
+      </section>
+
+      <section id="contact" className="contact-section shell"><div className="contact-label">05 <span>LET&apos;S BUILD SOMETHING</span></div><h2>Let&apos;s build something<br /><em>that works.</em></h2><p>Whether you&apos;re exploring an AI product, automating a process, or strengthening an existing system, I&apos;d love to hear what you&apos;re working on.</p><a className="contact-link" href="mailto:hello@gaddyh.dev">Get in touch <Arrow diagonal /></a></section>
+      <footer className="site-footer shell"><span>gaddyh. © 2026</span><span>Based in Israel · Working worldwide</span><a href="#top">Back to top ↑</a></footer>
+    </main>
   );
 }
