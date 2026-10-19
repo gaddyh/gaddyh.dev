@@ -81,7 +81,7 @@ h1 em, h2 em { color: var(--terracotta); font-style: normal; }
 .project-story .text-link { margin-top: 28px; }
 .tech-list { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 9px 33px; padding-top: 15px; }
 .tech-list span { color: var(--muted); font-size: 11px; }
-.project-grid { display: grid; gap: clamp(28px, 4vw, 64px); grid-template-columns: 1fr 1fr; margin-top: 125px; }
+.project-grid { display: grid; gap: 100px; grid-template-columns: 1fr; margin-top: 125px; }
 .secondary-visual { aspect-ratio: 1.28; background: #ddd8ce; overflow: hidden; position: relative; transition: transform .45s ease; }
 .secondary-project:hover .secondary-visual { transform: scale(.985); }
 .project-image { object-fit: contain; }
