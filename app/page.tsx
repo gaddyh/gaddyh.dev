@@ -36,36 +36,14 @@ function SectionIntro({ index, eyebrow, title }: { index: string; eyebrow: strin
 
 function TamitorVisual() {
   return (
-    <div className="tamitor-visual" aria-label="Illustrative TamiTor scheduling workflow">
-      <div className="visual-topline">
-        <span>CONVERSATION → EXECUTION</span>
-        <span className="status-dot">● SYSTEM READY</span>
-      </div>
-      <div className="conversation-window">
-        <div className="message message-customer">
-          <span className="message-label">CUSTOMER · WHATSAPP</span>
-          <p>Hi! Can I book a haircut tomorrow afternoon?</p>
-        </div>
-        <div className="message message-assistant">
-          <span className="message-label">TAMITOR</span>
-          <p>Of course. I found a slot at 3:30 PM. Would you like me to book it?</p>
-        </div>
-        <div className="message message-customer message-short">
-          <p>Yes, please!</p>
-        </div>
-      </div>
-      <div className="workflow-card">
-        <div className="workflow-heading">
-          <span>WORKFLOW EXECUTION</span>
-          <span>01—04</span>
-        </div>
-        <div className="workflow-steps">
-          <div><span className="step-check">✓</span><span>Intent recognized<small>book_appointment</small></span></div>
-          <div><span className="step-check">✓</span><span>Availability checked<small>Google Calendar</small></span></div>
-          <div><span className="step-check">✓</span><span>Booking created<small>Idempotent operation</small></span></div>
-          <div><span className="step-check">✓</span><span>Confirmation sent<small>WhatsApp</small></span></div>
-        </div>
-      </div>
+    <div className="tamitor-visual" aria-label="TamiTor conversational AI scheduling showcase">
+      <Image
+        src="/tamitor-showcase.png"
+        alt="TamiTor conversational AI scheduling showcase"
+        fill
+        sizes="(max-width: 720px) 100vw, 90vw"
+        className="tamitor-image"
+      />
     </div>
   );
 }
