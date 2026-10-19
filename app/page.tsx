@@ -48,13 +48,17 @@ function TamitorVisual() {
   );
 }
 
-function ProjectVisual({ variant }: { variant: "echo" | "guard" }) {
-  const guard = variant === "guard";
+function ProjectVisual({ variant }: { variant: "echo" | "guard" | "barcode" }) {
+  const image = {
+    echo: ["/og-echo.png", "Echo product artwork"],
+    guard: ["/og-guard-v3.png", "Echo Guard product artwork"],
+    barcode: ["/barcode-scanner-showcase.png", "Barcode Scanner ERP automation showcase"],
+  }[variant];
   return (
     <div className="secondary-visual">
       <Image
-        src={guard ? "/og-guard-v3.png" : "/og-echo.png"}
-        alt={guard ? "Echo Guard product artwork" : "Echo product artwork"}
+        src={image[0]}
+        alt={image[1]}
         fill
         sizes="(max-width: 720px) 100vw, 50vw"
         className="project-image"
@@ -88,16 +92,17 @@ export default function Home() {
       <section id="work" className="work-section shell section-rule">
         <SectionIntro index="01" eyebrow="SELECTED WORK" title="Products built for the real world." />
         <article className="featured-project">
-          <div className="project-heading"><div><span className="project-number">01 / 03</span><h3>TamiTor</h3></div><span className="project-type">AI SCHEDULING</span></div>
+          <div className="project-heading"><div><span className="project-number">01 / 04</span><h3>TamiTor</h3></div><span className="project-type">AI SCHEDULING</span></div>
           <TamitorVisual />
           <div className="project-story"><div><span className="story-label">01 — FEATURED PROJECT</span><h4>An AI assistant that handles appointments from conversation to calendar.</h4></div><div><p>A conversational scheduling system that understands customer requests, checks availability, manages booking workflows, and integrates with real business calendars.</p><a className="text-link" href="/work/tamitor">Explore the case study <Arrow /></a></div></div>
           <div className="tech-list"><span>Python</span><span>Temporal</span><span>OpenAI</span><span>Google Calendar</span><span>WhatsApp</span></div>
         </article>
         <div className="project-grid">
-          <article className="secondary-project"><ProjectVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">02 / 03</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
-          <article className="secondary-project"><ProjectVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">03 / 03</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="echo" /><div className="secondary-heading"><div><span className="project-number">02 / 04</span><h3>Echo</h3></div><span className="project-type">AI KNOWLEDGE</span></div><p>A focused exploration of making organizational knowledge easier to find, understand, and use.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="guard" /><div className="secondary-heading"><div><span className="project-number">03 / 04</span><h3>Echo Guard</h3></div><span className="project-type">RELIABILITY</span></div><p>Tools and systems for seeing what happens inside an AI workflow — and responding when it goes off course.</p><span className="preview-link">Case study in progress <span>↗</span></span></article>
+          <article className="secondary-project"><ProjectVisual variant="barcode" /><div className="secondary-heading"><div><span className="project-number">04 / 04</span><h3>Barcode Scanner</h3></div><span className="project-type">ERP AUTOMATION</span></div><p>A scanning system that detects barcodes from box photos and turns them into structured business data.</p><span className="preview-link">Showcase available <span>↗</span></span></article>
         </div>
-        <p className="illustration-note">Project artwork shown while the Echo and Echo Guard case studies are being prepared.</p>
+        <p className="illustration-note">Project artwork shown while detailed case studies are being prepared.</p>
       </section>
 
       <section className="services-section shell section-rule">
